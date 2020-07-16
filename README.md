@@ -3,7 +3,7 @@
 #### How to use:
 
 - ```git clone``` this.repository
-- make sure you have a ```.env``` file
+- make sure you have a ```.env``` file in the root of the repository
 - ```yarn install```
 - ```yarn start```
 - make requests to http://localhost:3000/dealership
