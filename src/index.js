@@ -1,13 +1,17 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+import { retrieveOfficesDataController} from './controllers';
+import makeExpressCallback from './express-callback';
 
+dotenv.config();
+
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.json());
 
-app.get('/hello',(req, res) => {
-	res.send('hello world');
-});
+app.get('/dealership/offices', makeExpressCallback(retrieveOfficesDataController));
 
-app.listen(4000, () => console.log('server on baby!'));
+app.listen(PORT, () => console.log('server on fire baby!'));
 
 export default app;
